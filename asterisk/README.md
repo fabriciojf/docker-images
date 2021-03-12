@@ -27,7 +27,7 @@ $ docker build -t fabriciojf/asterisk .
 Subindo o container:
 
 ```console
-$ docker container --name asterisk run -d fabriciojf/asterisk
+$ docker container run --name asterisk -d fabriciojf/asterisk
 ```
 
 Vendo os containers em execução:

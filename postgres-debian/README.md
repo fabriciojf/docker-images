@@ -27,7 +27,7 @@ $ docker build -t fabriciojf/postgres .
 Subindo o container:
 
 ```console
-$ docker container --name postgresdb run -d fabriciojf/postgres
+$ docker container run --name postgresdb -d fabriciojf/postgres
 ```
 
 Vendo os containers em execução:

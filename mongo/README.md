@@ -27,7 +27,7 @@ $ docker build -t fabriciojf/mongo .
 Subindo o container:
 
 ```console
-$ docker container --name mongodb run -d fabriciojf/mongo
+$ docker container run --name mongodb -d fabriciojf/mongo
 ```
 
 Vendo os containers em execução:
