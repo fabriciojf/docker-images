@@ -1,4 +1,8 @@
-# Utilizando a imagem
+# mongo
+
+Dockerfile para imagem Mongodb
+
+## Utilizando a imagem
 
 Clone o projeto em uma pasta de sua preferência. Ex:
 
@@ -14,7 +18,7 @@ Entre na pasta da imagem:
 $ cd mongo
 ```
 
-Realizando o build da imagem:
+Realizando o build da imagem, não se esqueça do . (ponto) no final do comando:
 
 ```console
 $ docker build -t fabriciojf/mongo .

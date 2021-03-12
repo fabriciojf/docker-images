@@ -1,4 +1,8 @@
-# Utilizando a imagem
+# postgres-ubuntu
+
+Dockerfile para imagem Postgres em sistema operacional ubuntu:14.04.
+
+## Utilizando a imagem
 
 Clone o projeto em uma pasta de sua preferência. Ex:
 
@@ -14,7 +18,7 @@ Entre na pasta da imagem:
 $ cd postgres-ubuntu
 ```
 
-Realizando o build da imagem:
+Realizando o build da imagem, não se esqueça do . (ponto) no final do comando:
 
 ```console
 $ docker build -t fabriciojf/postgres .

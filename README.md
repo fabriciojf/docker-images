@@ -22,7 +22,7 @@ Entre na imagem que deseja trabalhar. Usaremos a imagem Asterisk como exemplo:
 $ cd asterisk
 ```
 
-Realizando o build da imagem
+Realizando o build da imagem (Não se esqueça do . (ponto) no final do comando):
 
 ```console
 $ docker build -t fabriciojf/asterisk .
@@ -33,25 +33,25 @@ Subindo o container
 $ docker container --name asterisk run -d fabriciojf/asterisk
 ```
 
-Vendo os containers que estão rodando na máquina
+Vendo os containers em execução:
 
 ```console
 $ docker container ps -a
 ```
 
-Para logar no terminal da máquina utilize o comando abaixo. 
+Logando no terminal:
 
 ```console
 $ docker exec -it asterisk /bin/bash
 ```
 
-Parando o container
+Parando o container:
 
 ```console
 $ docker container stop asterisk
 ```
 
-Iniciando o container
+Iniciando o container:
 
 ```console
 $ docker container start asterisk

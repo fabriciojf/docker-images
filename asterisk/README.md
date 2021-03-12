@@ -1,4 +1,8 @@
-# Utilizando a imagem
+# asterisk
+
+Dockerfile para imagem Asterisk 11
+
+## Utilizando a imagem
 
 Clone o projeto em uma pasta de sua preferência. Ex:
 
@@ -14,7 +18,7 @@ Entre na pasta da imagem:
 $ cd asterisk
 ```
 
-Realizando o build da imagem:
+Realizando o build da imagem, não se esqueça do . (ponto) no final do comando:
 
 ```console
 $ docker build -t fabriciojf/asterisk .
