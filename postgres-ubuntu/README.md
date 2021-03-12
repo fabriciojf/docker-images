@@ -53,3 +53,9 @@ Iniciando o container:
 ```console
 $ docker container start postgresdb
 ```
+
+Descobrindo o IP do container Docker
+
+```console
+$ docker network inspect bridge
+```

@@ -56,3 +56,9 @@ Iniciando o container:
 ```console
 $ docker container start asterisk
 ```
+
+Descobrindo o IP do container Docker
+
+```console
+$ docker network inspect bridge
+```
