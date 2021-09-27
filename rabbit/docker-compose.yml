@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  rabbitmq:
+    container_name: rabbit
+    image: "rabbitmq:3-management"
+    environment:
+      RABBITMQ_DEFAULT_USER: "fabricio"
+      RABBITMQ_DEFAULT_PASS: "fabriciopass"
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - 'rabbitmq_data:/data'
+
+    networks:
+        rabbit-network:
+            ipv4_address: 172.50.50.160
+
+networks:
+    rabbit-network:
+        external:
+            name: devnetwork
+
+volumes:
+  rabbitmq_data:

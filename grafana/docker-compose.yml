@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+  grafana:
+    container_name: grafana
+    image: grafana/grafana:8.1.1
+    user: '104'
+    environment:
+      GF_INSTALL_PLUGINS: yesoreyeram-infinity-datasource
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - grafana-conf:/etc/grafana/
+    ports:
+      - 3500:3000
+    networks:
+      grafana-network:
+        ipv4_address: 172.50.50.122
+
+networks:
+  grafana-network:
+    external:
+      name: devnetwork
+
+volumes:
+  grafana-data:
+  grafana-conf:
