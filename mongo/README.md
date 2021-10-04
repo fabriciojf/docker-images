@@ -1,61 +1,18 @@
 # mongo
 
-Dockerfile para imagem Mongodb
+Mongodb Dockerfile
 
-## Utilizando a imagem
-
-Clone o projeto em uma pasta de sua preferência. Ex:
+## Using the image
 
 ```console
-$ cd /opt
-$ git clone https://github.com/fabriciojf/docker-images.git
-$ cd docker-images
+mkdir ~/dockers
+cd ~/dockers
+git clone https://github.com/fabriciojf/docker-images.git
+cd docker-images
 ```
 
-Entre na pasta da imagem:
+## Creating the Network
 
 ```console
-$ cd mongo
-```
-
-Realizando o build da imagem, não se esqueça do . (ponto) no final do comando:
-
-```console
-$ docker build -t fabriciojf/mongo .
-```
-
-Subindo o container:
-
-```console
-$ docker container run --name mongodb -d fabriciojf/mongo
-```
-
-Vendo os containers em execução:
-
-```console
-$ docker container ps -a
-```
-
-Logando no terminal do container:
-
-```console
-$ docker exec -it mongodb /bin/sh
-```
-
-Parando o container:
-
-```console
-$ docker container stop mongodb
-```
-
-Iniciando o container:
-
-```console
-$ docker container start mongodb
-```
-
-Descobrindo o IP do container Docker
-
-```console
-$ docker network inspect bridge
+docker network create --subnet=172.50.50.0/16 devnetwork
 ```

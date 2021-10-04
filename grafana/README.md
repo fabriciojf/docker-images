@@ -3,7 +3,7 @@
 ## Creating the Network
 
 ```console
-$ docker network create --subnet=172.50.50.0/16 devnetwork
+docker network create --subnet=172.50.50.0/16 devnetwork
 ```
 
 ## Initial Password
@@ -52,4 +52,4 @@ org_role = Viewer
 
 ## Author
 
-* Fabricio Costa fabriciojf@gmail.com
+- Fabricio Costa fabriciojf@gmail.com

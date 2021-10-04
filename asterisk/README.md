@@ -1,61 +1,18 @@
 # asterisk
 
-Dockerfile para imagem Asterisk 11
+Asterisk 16 Dockerfile
 
-## Utilizando a imagem
-
-Clone o projeto em uma pasta de sua preferência. Ex:
+## Using the image
 
 ```console
-$ cd /opt
-$ git clone https://github.com/fabriciojf/docker-images.git
-$ cd docker-images
+mkdir ~/dockers
+cd ~/dockers
+git clone https://github.com/fabriciojf/docker-images.git
+cd docker-images
 ```
 
-Entre na pasta da imagem:
+## Creating the Network
 
 ```console
-$ cd asterisk
-```
-
-Realizando o build da imagem, não se esqueça do . (ponto) no final do comando:
-
-```console
-$ docker build -t fabriciojf/asterisk .
-```
-
-Subindo o container:
-
-```console
-$ docker container run --name asterisk -d fabriciojf/asterisk
-```
-
-Vendo os containers em execução:
-
-```console
-$ docker container ps -a
-```
-
-Logando no terminal do container:
-
-```console
-$ docker exec -it asterisk /bin/bash
-```
-
-Parando o container:
-
-```console
-$ docker container stop asterisk
-```
-
-Iniciando o container:
-
-```console
-$ docker container start asterisk
-```
-
-Descobrindo o IP do container Docker
-
-```console
-$ docker network inspect bridge
+docker network create --subnet=172.50.50.0/16 devnetwork
 ```
