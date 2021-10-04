@@ -8,7 +8,7 @@ Asterisk 16 Dockerfile
 mkdir ~/dockers
 cd ~/dockers
 git clone https://github.com/fabriciojf/docker-images.git
-cd docker-images
+cd docker-images/asterisk/16
 ```
 
 ## Creating the Network
