@@ -1,0 +1,28 @@
+version: '2'
+services:
+  asterisk:
+    image: fabriciojf/asterisk-16:1.0
+    container_name: asterisk
+    ports:
+     - "5060:5060/udp"
+     - "5060:5060/tcp"
+     - "10000-10099:10000-10099/udp"
+     - "8088:8088"
+     - "8089:8089"
+    volumes:
+     - ast-msm:/var/conf/msmtprc
+     - ast-conf:/etc/asterisk
+     - ast-spool:/var/spool/asterisk
+    networks:
+      asterisk-network:
+        ipv4_address: 172.50.50.50
+
+networks:
+  asterisk-network:
+    external:
+      name: devnetwork
+
+volumes:
+  ast-msm:
+  ast-conf:
+  ast-spool:
