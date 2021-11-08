@@ -1,0 +1,67 @@
+define service {
+    use                             generic-service
+    name                            passive-service-HOSTNAME
+    register                        0
+    active_checks_enabled           0
+    passive_checks_enabled          1
+    check_freshness                 1
+    freshness_threshold             600
+    register                        0
+}
+
+define service{
+    use                     passive-service-HOSTNAME
+    host_name               HOSTNAME
+    service_description     Process Count
+    check_command           check_dummy!0
+    _graphitepostfix        processcount
+}
+
+
+define service{
+    use                     passive-service-HOSTNAME
+    host_name               HOSTNAME
+    service_description     Swap Usage
+    check_command           check_dummy!0
+    _graphitepostfix        swapusage
+}
+
+define service{
+    use                     passive-service-HOSTNAME
+    host_name               HOSTNAME
+    service_description     Memory Usage
+    check_command           check_dummy!0
+    _graphitepostfix        memoryusage
+}
+
+define service{
+    use                     passive-service-HOSTNAME
+    host_name               HOSTNAME
+    service_description     CPU Usage
+    check_command           check_dummy!0
+    _graphitepostfix        cpuusage
+}
+
+define service{
+    use                     passive-service-HOSTNAME
+    host_name               HOSTNAME
+    service_description     Traffic Recv
+    check_command           check_dummy!0
+    _graphitepostfix        trafficrecv
+}
+
+define service{
+    use                     passive-service-HOSTNAME
+    host_name               HOSTNAME
+    service_description     Traffic Sent
+    check_command           check_dummy!0
+    _graphitepostfix        trafficsent
+}
+
+define service{
+    use                     passive-service-HOSTNAME
+    host_name               HOSTNAME
+    service_description     Root Partition Usage
+    check_command           check_dummy!0
+    _graphitepostfix        rootpartusage
+}
