@@ -1,0 +1,29 @@
+#!/bin/bash
+
+print() {
+    RED='\033[0;31m'
+    GREEN='\033[0;32m'
+    BLUE='\033[0;34m'
+    GRAY='\033[0;37m'
+    NC='\033[0m'
+    case $2 in
+        'white') echo -e "${NC}$1" ;;
+        'red') echo -e "${RED}$1 ${NC}" ;;
+        'green') echo -e "${GREEN}$1 ${NC}" ;;
+        'blue') echo -e "${BLUE}$1 ${NC}" ;;
+        'gray') echo -e "${GRAY}$1 ${NC}" ;;
+        *) echo -e "${GREEN}$1 ${NC}" ;;
+    esac
+}
+
+print "Clonando o repositorio do portal" red
+git clone https://FabricioSCosta@bitbucket.org/FabricioSCosta/omnichannel-frontend.git portal
+
+print "Edite os arquivos abaixo" white
+print "nano PORTAL_FOLDER/app/Config/database.php"
+print "'host' => '172.50.50.115'," white
+print "'port' => '5432'," white
+print ""
+print "nano PORTAL_FOLDER/app/Config/bemmelhor.php"
+print "Configure::write('debug', 0);" white
+print ""

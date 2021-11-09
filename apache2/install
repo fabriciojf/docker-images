@@ -1,0 +1,15 @@
+#!/bin/bash
+
+docker stop portal
+docker rm portal
+docker rmi dnk/portal
+
+docker build -t dnk/portal .
+
+docker run --name portal --net devnetwork --ip 172.50.50.90 \
+    -p 80:80 \
+    -d dnk/portal
+
+d status
+
+docker logs portal

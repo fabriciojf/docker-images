@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  mongo-express:
+    container_name: mongo-express
+    image: mongo-express
+    ports:
+      - 7018:8081
+    environment:
+      ME_CONFIG_BASICAUTH_USERNAME: dnk
+      ME_CONFIG_BASICAUTH_PASSWORD: docker
+      ME_CONFIG_MONGODB_PORT: 27017
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: docker
+    links:
+      - mongo
+    networks:
+      mongo-network:
+        ipv4_address: 172.50.50.135
+
+  mongo:
+    container_name: mongo
+    image: mongo
+    environment:
+      MONGO_INITDB_DATABASE: chassi
+    ports:
+      - 7017:27017
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      mongo-network:
+        ipv4_address: 172.50.50.137
+
+networks:
+  mongo-network:
+    external:
+      name: devnetwork
+
+volumes:
+  mongo-data:

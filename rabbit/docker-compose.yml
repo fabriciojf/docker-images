@@ -4,8 +4,8 @@ services:
     container_name: rabbit
     image: "rabbitmq:3-management"
     environment:
-      RABBITMQ_DEFAULT_USER: "fabricio"
-      RABBITMQ_DEFAULT_PASS: "fabriciopass"
+      RABBITMQ_DEFAULT_USER: "admin"
+      RABBITMQ_DEFAULT_PASS: "docker"
     ports:
       - "5672:5672"
       - "15672:15672"

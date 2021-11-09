@@ -31,7 +31,7 @@ services:
         max-file: "10"
     environment:
       - MYSQL_USER=nagios
-      - MYSQL_PASSWORD=nagios
+      - MYSQL_PASSWORD=docker
       - MYSQL_ADDRESS=nagios_mysql
       - MYSQL_DATABASE=nagios
       - MYSQL_RANDOM_ROOT_PASSWORD=yes
